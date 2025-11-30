@@ -1,0 +1,7 @@
+{
+  "name": " EduAnimate",
+  "description": "AI-powered platform converting lesson notes into whiteboard animations for Nigerian teachers.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

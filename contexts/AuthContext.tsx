@@ -4,6 +4,7 @@ import { User } from '../types';
 interface AuthContextType {
   user: User | null;
   login: () => void;
+  loginWithGoogle: () => void;
   logout: () => void;
   isAuthenticated: boolean;
 }
@@ -25,12 +26,23 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     });
   };
 
+  const loginWithGoogle = () => {
+    // Simulate Google Login
+    setUser({
+      id: 'g_12345',
+      name: 'Amina Ibrahim',
+      email: 'amina.i@gmail.com',
+      schoolName: 'Google Verified School',
+      plan: 'free'
+    });
+  };
+
   const logout = () => {
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isAuthenticated: !!user }}>
+    <AuthContext.Provider value={{ user, login, loginWithGoogle, logout, isAuthenticated: !!user }}>
       {children}
     </AuthContext.Provider>
   );
